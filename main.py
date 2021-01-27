@@ -2,9 +2,6 @@
 By: Dakota Walker
 Class: Algorithms
 Assignment: Protein Translation
-
-TODO:
-1.) Ask Brandon about discrepiancy in numbers.
 '''
 
 #Gets file containing the Raw DNA code.
@@ -119,55 +116,32 @@ for i in range(len(translatedData)):
     stringData = "".join(translatedData[i])
     translatedData[i]=stringData
 
-
-#Writes information to a new .txt file (if file does not exist else will rewrite over).
-#Had to use a lot of format.
+'''
+Writes information to a new .txt file (if file does not exist else will rewrite over).
+Had to use a lot of format.
+If wanted you can remove ProteinTranslation.txt and it will still work.
+'''
 results = open("ProteinTranslation.txt", "w")
+
 results.writelines([
     "Initial Data: "+data+"\n",
     "Translated Data: "+newData+"\n\n",
-    translatedData[0],
-    "\nA  {:.2%}\n".format((NumbersCounted[1]["A"]/NumbersCounted[1]["Total"])),
-    "C  {:.2%}\n".format((NumbersCounted[1]["C"]/NumbersCounted[1]["Total"])),
-    "G  {:.2%}\n".format((NumbersCounted[1]["G"]/NumbersCounted[1]["Total"])),
-    "U  {:.2%}".format((NumbersCounted[1]["U"]/NumbersCounted[1]["Total"]))+"\n\n",
+])
 
-    translatedData[1],
-    "\nA  {:.2%}\n".format((NumbersCounted[2]["A"]/NumbersCounted[2]["Total"])),
-    "C  {:.2%}\n".format((NumbersCounted[2]["C"]/NumbersCounted[2]["Total"])),
-    "G  {:.2%}\n".format((NumbersCounted[2]["G"]/NumbersCounted[2]["Total"])),
-    "U  {:.2%}".format((NumbersCounted[2]["U"]/NumbersCounted[2]["Total"]))+"\n\n",
-
-    translatedData[2],
-    "\nA  {:.2%}\n".format((NumbersCounted[3]["A"]/NumbersCounted[3]["Total"])),
-    "C  {:.2%}\n".format((NumbersCounted[3]["C"]/NumbersCounted[3]["Total"])),
-    "G  {:.2%}\n".format((NumbersCounted[3]["G"]/NumbersCounted[3]["Total"])),
-    "U  {:.2%}\n".format((NumbersCounted[3]["U"]/NumbersCounted[3]["Total"]))+"\n\n",
-
-    translatedData[3],
-    "\nA  {:.2%}\n".format((NumbersCounted[4]["A"]/NumbersCounted[4]["Total"])),
-    "C  {:.2%}\n".format((NumbersCounted[4]["C"]/NumbersCounted[4]["Total"])),
-    "G  {:.2%}\n".format((NumbersCounted[4]["G"]/NumbersCounted[4]["Total"])),
-    "U  {:.2%}\n".format((NumbersCounted[4]["U"]/NumbersCounted[4]["Total"]))+"\n\n",
-
-    translatedData[4],
-    "\nA  {:.2%}\n".format((NumbersCounted[5]["A"]/NumbersCounted[5]["Total"])),
-    "C  {:.2%}\n".format((NumbersCounted[5]["C"]/NumbersCounted[5]["Total"])),
-    "G  {:.2%}\n".format((NumbersCounted[5]["G"]/NumbersCounted[5]["Total"])),
-    "U  {:.2%}\n".format((NumbersCounted[5]["U"]/NumbersCounted[5]["Total"]))+"\n\n",
-
-    translatedData[5],
-    "\nA  {:.2%}\n".format((NumbersCounted[6]["A"]/NumbersCounted[6]["Total"])),
-    "C  {:.2%}\n".format((NumbersCounted[6]["C"]/NumbersCounted[6]["Total"])),
-    "G  {:.2%}\n".format((NumbersCounted[6]["G"]/NumbersCounted[6]["Total"])),
-    "U  {:.2%}".format((NumbersCounted[6]["U"]/NumbersCounted[6]["Total"]))+"\n\n",
-
+for i in range(len(NumbersCounted)):
+    results.writelines([
+        translatedData[i],
+    "\nA  {:.2%}\n".format((NumbersCounted[i+1]["A"]/NumbersCounted[i+1]["Total"])),
+    "C  {:.2%}\n".format((NumbersCounted[i+1]["C"]/NumbersCounted[i+1]["Total"])),
+    "G  {:.2%}\n".format((NumbersCounted[i+1]["G"]/NumbersCounted[i+1]["Total"])),
+    "U  {:.2%}".format((NumbersCounted[i+1]["U"]/NumbersCounted[i+1]["Total"]))+"\n\n",
+    ])
+results.writelines([
     "----Protein Frequencies----\n",
     "Asp   {:.2%}\n".format((proteinStrandFrequencyGlobal["Asp"]/proteinStrandFrequencyGlobal["Total"])),
     "Asn   {:.2%}\n".format((proteinStrandFrequencyGlobal["Asn"]/proteinStrandFrequencyGlobal["Total"])),
     "Arg   {:.2%}\n".format((proteinStrandFrequencyGlobal["Arg"]/proteinStrandFrequencyGlobal["Total"])),
     "Tyr   {:.2%}\n".format((proteinStrandFrequencyGlobal["Tyr"]/proteinStrandFrequencyGlobal["Total"])),
-    "Gln   {:.2%}\n".format((proteinStrandFrequencyGlobal["Gln"]/proteinStrandFrequencyGlobal["Total"])),
     "Gln   {:.2%}\n".format((proteinStrandFrequencyGlobal["Gln"]/proteinStrandFrequencyGlobal["Total"])),
     "Glu   {:.2%}\n".format((proteinStrandFrequencyGlobal["Glu"]/proteinStrandFrequencyGlobal["Total"])),
     "Trp   {:.2%}\n".format((proteinStrandFrequencyGlobal["Trp"]/proteinStrandFrequencyGlobal["Total"])),
@@ -186,5 +160,4 @@ results.writelines([
     "\n\n",
     "Total Protiens: "+str(len(translatedData))+"\n\n"
 ])
-
 results.close()

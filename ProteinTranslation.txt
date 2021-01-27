@@ -19,20 +19,17 @@ C  31.25%
 G  16.67%
 U  29.17%
 
-
 Met-Tyr-Arg-Pro-Ala-Glu-Cys-Met-Arg-Ile-Met-Leu-Leu-Thr-STOP
 A  26.67%
 C  22.22%
 G  24.44%
 U  26.67%
 
-
 Met-Ala-Leu-Cys-Gln-Ser-His-Pro-Arg-Pro-STOP
 A  15.15%
 C  33.33%
 G  24.24%
 U  27.27%
-
 
 Met-Asn-Ile-Asn-Ile-Ala-Val-Pro-Thr-Pro-Ser-Val-Tyr-STOP
 A  30.95%
@@ -45,7 +42,6 @@ Asp   1.18%
 Asn   3.53%
 Arg   7.06%
 Tyr   8.24%
-Gln   1.18%
 Gln   1.18%
 Glu   1.18%
 Trp   1.18%
