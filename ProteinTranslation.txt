@@ -20,11 +20,11 @@ G  16.67%
 U  29.17%
 
 
-Met-Tyr-Arg-Pro-Ala-Cys-Met-Arg-Ile-Met-Leu-Leu-Thr-STOP
-A  26.19%
-C  23.81%
-G  21.43%
-U  28.57%
+Met-Tyr-Arg-Pro-Ala-Glu-Cys-Met-Arg-Ile-Met-Leu-Leu-Thr-STOP
+A  26.67%
+C  22.22%
+G  24.44%
+U  26.67%
 
 
 Met-Ala-Leu-Cys-Gln-Ser-His-Pro-Arg-Pro-STOP
@@ -41,25 +41,26 @@ G  16.67%
 U  30.95%
 
 ----Protein Frequencies----
-Asp   1.19%
-Asn   3.57%
-Arg   7.14%
-Tyr   8.33%
-Gln   1.19%
-Trp   1.19%
-Glu   0.00%
-His   5.95%
-Cys   2.38%
-Pro   9.52%
-Ile   13.10%
-STOP  7.14%
-Thr   3.57%
-Met   9.52%
-Leu   7.14%
-Ala   7.14%
-Gly   1.19%
-Val   2.38%
-Ser   8.33%
+Asp   1.18%
+Asn   3.53%
+Arg   7.06%
+Tyr   8.24%
+Gln   1.18%
+Gln   1.18%
+Glu   1.18%
+Trp   1.18%
+His   5.88%
+Cys   2.35%
+Pro   9.41%
+Ile   12.94%
+STOP  7.06%
+Thr   3.53%
+Met   9.41%
+Leu   7.06%
+Ala   7.06%
+Gly   1.18%
+Val   2.35%
+Ser   8.24%
 
 
 Total Protiens: 6

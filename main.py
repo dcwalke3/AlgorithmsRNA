@@ -8,7 +8,7 @@ TODO:
 '''
 
 #Gets file containing the Raw DNA code.
-with open('C:\\Users\Odin\Documents\Github\AlgorithmsRNA\RawProtein.txt', 'r') as file:
+with open('RawProtein.txt', 'r') as file:
     #Makes the multiple line text file into one long string to be split later.
     data = file.read().replace('\n', '')
 
@@ -69,7 +69,7 @@ ProteinConversionKey = {"UUU":"Phe", "UUC":"Phe", "UUU":"Leu", "UUU":"Leu",
                         "AGU":"Ser", "AGC":"Ser", "AGA":"Arg", "AGG":"Arg",
                         "GUU":"Val", "GUC":"Val", "GUA":"Val", "GUG":"Val",
                         "GCU":"Ala", "GCA":"Ala", "GCC":"Ala", "GCG":"Ala",
-                        "GAU":"Asp", "GAC":"Asp", "GAA":"Glu", "GAC":"Glu",
+                        "GAU":"Asp", "GAC":"Asp", "GAA":"Glu", "GAG":"Glu",
                         "GGU":"Gly", "GGC":"Gly", "GGG":"Gly", "GGA":"Gly",}
 
 
@@ -168,8 +168,9 @@ results.writelines([
     "Arg   {:.2%}\n".format((proteinStrandFrequencyGlobal["Arg"]/proteinStrandFrequencyGlobal["Total"])),
     "Tyr   {:.2%}\n".format((proteinStrandFrequencyGlobal["Tyr"]/proteinStrandFrequencyGlobal["Total"])),
     "Gln   {:.2%}\n".format((proteinStrandFrequencyGlobal["Gln"]/proteinStrandFrequencyGlobal["Total"])),
-    "Trp   {:.2%}\n".format((proteinStrandFrequencyGlobal["Trp"]/proteinStrandFrequencyGlobal["Total"])),
+    "Gln   {:.2%}\n".format((proteinStrandFrequencyGlobal["Gln"]/proteinStrandFrequencyGlobal["Total"])),
     "Glu   {:.2%}\n".format((proteinStrandFrequencyGlobal["Glu"]/proteinStrandFrequencyGlobal["Total"])),
+    "Trp   {:.2%}\n".format((proteinStrandFrequencyGlobal["Trp"]/proteinStrandFrequencyGlobal["Total"])),
     "His   {:.2%}\n".format((proteinStrandFrequencyGlobal["His"]/proteinStrandFrequencyGlobal["Total"])),
     "Cys   {:.2%}\n".format((proteinStrandFrequencyGlobal["Cys"]/proteinStrandFrequencyGlobal["Total"])),
     "Pro   {:.2%}\n".format((proteinStrandFrequencyGlobal["Pro"]/proteinStrandFrequencyGlobal["Total"])),
