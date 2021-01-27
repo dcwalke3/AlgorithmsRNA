@@ -138,25 +138,14 @@ for i in range(len(NumbersCounted)):
     ])
 results.writelines([
     "----Protein Frequencies----\n",
-    "Asp   {:.2%}\n".format((proteinStrandFrequencyGlobal["Asp"]/proteinStrandFrequencyGlobal["Total"])),
-    "Asn   {:.2%}\n".format((proteinStrandFrequencyGlobal["Asn"]/proteinStrandFrequencyGlobal["Total"])),
-    "Arg   {:.2%}\n".format((proteinStrandFrequencyGlobal["Arg"]/proteinStrandFrequencyGlobal["Total"])),
-    "Tyr   {:.2%}\n".format((proteinStrandFrequencyGlobal["Tyr"]/proteinStrandFrequencyGlobal["Total"])),
-    "Gln   {:.2%}\n".format((proteinStrandFrequencyGlobal["Gln"]/proteinStrandFrequencyGlobal["Total"])),
-    "Glu   {:.2%}\n".format((proteinStrandFrequencyGlobal["Glu"]/proteinStrandFrequencyGlobal["Total"])),
-    "Trp   {:.2%}\n".format((proteinStrandFrequencyGlobal["Trp"]/proteinStrandFrequencyGlobal["Total"])),
-    "His   {:.2%}\n".format((proteinStrandFrequencyGlobal["His"]/proteinStrandFrequencyGlobal["Total"])),
-    "Cys   {:.2%}\n".format((proteinStrandFrequencyGlobal["Cys"]/proteinStrandFrequencyGlobal["Total"])),
-    "Pro   {:.2%}\n".format((proteinStrandFrequencyGlobal["Pro"]/proteinStrandFrequencyGlobal["Total"])),
-    "Ile   {:.2%}\n".format((proteinStrandFrequencyGlobal["Ile"]/proteinStrandFrequencyGlobal["Total"])),
-    "STOP  {:.2%}\n".format((proteinStrandFrequencyGlobal["STOP"]/proteinStrandFrequencyGlobal["Total"])),
-    "Thr   {:.2%}\n".format((proteinStrandFrequencyGlobal["Thr"]/proteinStrandFrequencyGlobal["Total"])),
-    "Met   {:.2%}\n".format((proteinStrandFrequencyGlobal["Met"]/proteinStrandFrequencyGlobal["Total"])),
-    "Leu   {:.2%}\n".format((proteinStrandFrequencyGlobal["Leu"]/proteinStrandFrequencyGlobal["Total"])),
-    "Ala   {:.2%}\n".format((proteinStrandFrequencyGlobal["Ala"]/proteinStrandFrequencyGlobal["Total"])),
-    "Gly   {:.2%}\n".format((proteinStrandFrequencyGlobal["Gly"]/proteinStrandFrequencyGlobal["Total"])),
-    "Val   {:.2%}\n".format((proteinStrandFrequencyGlobal["Val"]/proteinStrandFrequencyGlobal["Total"])),
-    "Ser   {:.2%}\n".format((proteinStrandFrequencyGlobal["Ser"]/proteinStrandFrequencyGlobal["Total"])),
+])
+
+for key in proteinStrandFrequencyGlobal:
+    if(proteinStrandFrequencyGlobal[key]>0):    
+        results.writelines([
+        ""+key+"   {:.2%}\n".format((proteinStrandFrequencyGlobal[key]/proteinStrandFrequencyGlobal["Total"])),
+        ])
+results.writelines([ 
     "\n\n",
     "Total Protiens: "+str(len(translatedData))+"\n\n"
 ])
