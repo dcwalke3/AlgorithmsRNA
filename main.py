@@ -147,6 +147,6 @@ for key in proteinStrandFrequencyGlobal:
         ])
 results.writelines([ 
     "\n\n",
-    "Total Protiens: "+str(len(translatedData))+"\n\n"
+    "Total Protiens: "+str(len(translatedData))
 ])
 results.close()
