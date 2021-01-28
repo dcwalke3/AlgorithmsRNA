@@ -52,7 +52,7 @@ NumbersCounted = {}
 
 
 #Conversion key for the proteins to help me
-ProteinConversionKey = {"UUU":"Phe", "UUC":"Phe", "UUU":"Leu", "UUU":"Leu",
+ProteinConversionKey = {"UUU":"Phe", "UUC":"Phe", "UUG":"Leu", "UUA":"Leu",
                         "UCU":"Ser", "UCC":"Ser", "UCA":"Ser", "UCG":"Ser",
                         "UAU":"Tyr", "UAC":"Tyr", "UAA":"STOP", "UAG":"STOP",
                         "UGU":"Cys", "UGC":"Cys", "UGA":"STOP", "UGG":"Trp",
