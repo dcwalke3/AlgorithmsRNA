@@ -8,29 +8,15 @@ Assignment: Protein Translation
 with open('RawProtein.txt', 'r') as file:
     #Makes the multiple line text file into one long string to be split later.
     data = file.read().replace('\n', '')
-
+    
 
 protienCountGlobal = {"U":0, "A":0, "G":0, "C":0, "Total":0}
 
 #Translates the data to RNA.
+Translate = {"T":"A", "A":"U", "G":"C", "C":"G"}
 newData = ""
 for c in range(len(data)):
-    char = ""
-    if data[c] == "T":
-        char = "A"
-        protienCountGlobal["A"]+=1
-    elif data[c] == "A":
-        char = "U"
-        protienCountGlobal["U"]+=1
-    elif data[c] == "G":
-        char = "C"
-        protienCountGlobal["C"]+=1
-    elif data[c] == "C":
-        char = "G"
-        protienCountGlobal["G"]+=1
-    newData += char
-    protienCountGlobal["Total"]+=1
-
+    newData += Translate[data[c]]
 
 # Seperates things into a group of 3.
 n=3
@@ -52,7 +38,7 @@ NumbersCounted = {}
 
 
 #Conversion key for the proteins to help me
-ProteinConversionKey = {"UUU":"Phe", "UUC":"Phe", "UUU":"Leu", "UUU":"Leu",
+ProteinConversionKey = {"UUU":"Phe", "UUC":"Phe", "UUG":"Leu", "UUA":"Leu",
                         "UCU":"Ser", "UCC":"Ser", "UCA":"Ser", "UCG":"Ser",
                         "UAU":"Tyr", "UAC":"Tyr", "UAA":"STOP", "UAG":"STOP",
                         "UGU":"Cys", "UGC":"Cys", "UGA":"STOP", "UGG":"Trp",
@@ -76,39 +62,29 @@ tempList=[]
 #Made this just to make counting ACGUs easier.
 tempRawString=""
 dictIndex=1
-for i in range(len(seperatedData)):
-    
-    if(seperatedData[i] in ProteinConversionKey):
+for i in range(len(seperatedData)): 
+    if (ProteinConversionKey[seperatedData[i]]=="STOP"):
         
-        if (ProteinConversionKey[seperatedData[i]]=="STOP"):
-            
-            proteinStrandFrequencyGlobal[ProteinConversionKey[seperatedData[i]]]+=1
-            proteinStrandFrequencyGlobal["Total"]+=1
-            
-            tempList.append(ProteinConversionKey[seperatedData[i]])
-            translatedData.append(tempList)
-            tempList=[]
+        proteinStrandFrequencyGlobal[ProteinConversionKey[seperatedData[i]]]+=1
+        proteinStrandFrequencyGlobal["Total"]+=1
+        
+        tempList.append(ProteinConversionKey[seperatedData[i]])
+        translatedData.append(tempList)
+        tempList=[]
 
-            #Used to count the number of ACGUs with each protein strand.
-            NumbersCounted[dictIndex] = {"A":0, "U":0, "G":0, "C":0, "Total":0}
-            tempRawString+=seperatedData[i]
-            for z in range(len(tempRawString)):
-                if(tempRawString[z]=="A"):
-                    NumbersCounted[dictIndex]["A"]+=1
-                elif(tempRawString[z]=="U"):
-                    NumbersCounted[dictIndex]["U"]+=1
-                if(tempRawString[z]=="G"):
-                    NumbersCounted[dictIndex]["G"]+=1
-                if(tempRawString[z]=="C"):
-                    NumbersCounted[dictIndex]["C"]+=1
-                NumbersCounted[dictIndex]["Total"]+=1    
-            dictIndex+=1
-            tempRawString=""
-        else:
-            proteinStrandFrequencyGlobal[ProteinConversionKey[seperatedData[i]]]+=1
-            proteinStrandFrequencyGlobal["Total"]+=1
-            tempList.append(ProteinConversionKey[seperatedData[i]]+"-")
-            tempRawString+=seperatedData[i]
+        #Used to count the number of ACGUs with each protein strand.
+        NumbersCounted[dictIndex] = {"A":0, "U":0, "G":0, "C":0, "Total":0}
+        tempRawString+=seperatedData[i]
+        for z in range(len(tempRawString)):
+            NumbersCounted[dictIndex][tempRawString[z]]+=1
+            NumbersCounted[dictIndex]["Total"]+=1    
+        dictIndex+=1
+        tempRawString=""
+    else:
+        proteinStrandFrequencyGlobal[ProteinConversionKey[seperatedData[i]]]+=1
+        proteinStrandFrequencyGlobal["Total"]+=1
+        tempList.append(ProteinConversionKey[seperatedData[i]]+"-")
+        tempRawString+=seperatedData[i]
 
 #Returns all protein strands into strings instead of individual list elements.            
 stringData=""
